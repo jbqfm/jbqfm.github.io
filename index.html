@@ -15,19 +15,7 @@
 </head>
 <body>
 	<div style="float: left;">
-		<video id="video_smaple" autoplay loop muted></video>
-			<script>
-				var video = document.getElementById('video_smaple');
-				var videoSrc = 'https://fms2.uniqueradio.jp/agqr1/iphone3/HLS_Layer1.m3u8';
-				if(Hls.isSupported()) {
-					var hls = new Hls();
-					hls.loadSource(videoSrc);
-					hls.attachMedia(video);
-				}
-				else if(video.canPlayType('application/vnd.apple.mpegurl')) {
-					video.src = videoSrc;
-				}
-		</script>
+		<video src="https://fms2.uniqueradio.jp/agqr1/iphone3/HLS_Layer1.m3u8" autoplay loop muted></video>
 	</div>
 	<div style="float: left; width: 200px;" >
 		twitter
