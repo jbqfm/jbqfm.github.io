@@ -10,14 +10,21 @@
 </script>
 <title>超A&G+</title>
 <style>
-	
+	@media (orientation: landscape){
+		.stream {width: 70%;}
+		.twi {width: 30%;}
+	}
+	@media (orientation: portrait){
+		.stream {width: 100%;}
+		.twi {width: 100%;}
+	}
 </style>
 </head>
 <body>
-	<div style="float: left;">
+	<div class="stream" style="float: left;">
 		<video src="https://fms2.uniqueradio.jp/agqr1/iphone3/HLS_Layer1.m3u8" control autoplay loop muted></video>
 	</div>
-	<div style="float: left;" >
+	<div class="twi" style="float: left;" >
 		<iframe frameborder="0" style="margin-left: 13px; height:100%;" src="https://www.uniqueradio.jp/_common/twitter/twitter-inc2.html">
 	</div>
 	<div style="clear: both;"></div>
