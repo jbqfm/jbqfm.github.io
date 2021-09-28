@@ -15,32 +15,28 @@
   </style>
 </head>
 <body>
-<table border="0">
-  <tbody>
-        <tr>
-            <td>
-              <video id="video_smaple" autoplay loop muted></video>
-              <script>
-		var video = document.getElementById('video_smaple');
-		var videoSrc = 'https://fms2.uniqueradio.jp/agqr1/iphone3/HLS_Layer1.m3u8';
-                if(Hls.isSupported()) {
-	                let hls = new Hls({
-    				xhrSetup: (xhr, url) => {
-    					xhr.open('GET', url.replace('http://', 'https://'))
-    				}
-			})
-	                hls.loadSource(videoSrc);
-	                hls.attachMedia(video);
-                }
-		else if(video.canPlayType('application/vnd.apple.mpegurl')) {
-			video.src = videoSrc;
-		}
-              </script>
-            </td>
-            <td width="200">twitter</td>
-        </tr>
-  </tbody>
-</video>
-</table>
+	<div style="float: left;">
+		<video id="video_smaple" autoplay loop muted></video>
+			<script>
+				var video = document.getElementById('video_smaple');
+				var videoSrc = 'https://fms2.uniqueradio.jp/agqr1/iphone3/HLS_Layer1.m3u8';
+				if(Hls.isSupported()) {
+					let hls = new Hls({
+						xhrSetup: (xhr, url) => {
+							xhr.open('GET', url.replace('http://', 'https://'))
+						}
+					})
+					hls.loadSource(videoSrc);
+					hls.attachMedia(video);
+				}
+				else if(video.canPlayType('application/vnd.apple.mpegurl')) {
+					video.src = videoSrc;
+				}
+		</script>
+	</div>
+	<div style="float: left; width: 200px;" >
+		twitter
+	</div>
+	<div style="clear: both;"></div>
 </body>
 </html>
