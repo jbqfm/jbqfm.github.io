@@ -23,7 +23,14 @@
 </head>
 <body>
 	<div class="stream" style="float: left;">
-		<video style="width:100%; height:100%;" src="https://fms2.uniqueradio.jp/agqr1/iphone3/HLS_Layer1.m3u8" control autoplay loop muted></video>
+		<video id="autoplay" style="width:100%; height:100%;" src="https://fms2.uniqueradio.jp/agqr1/iphone3/HLS_Layer1.m3u8" autoplay muted controls>
+			<script type="text/javascript">
+				window.onload = function() {
+					document.getElementById("autoplay").volume = 1;
+				}
+			</script>
+		</video>
+		
 	</div>
 	<div class="twi" style="float: left;" >
 		<iframe frameborder="0" style="margin-left: 13px; width:100%; height:100%;" src="https://www.uniqueradio.jp/_common/twitter/twitter-inc2.html">
