@@ -3,11 +3,12 @@
   <!-- manifest.jsonを呼び出しています -->
   <link rel="manifest" href="./manifest.json">
   <link rel="apple-touch-icon" href="./apicon.png">
-  <style>
+  <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./service-worker.js').then(function() { console.log('Service Worker Registered'); });
    }
-  </style>
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <title>超A&G+</title>
   <style>
     html,body,video { width:100%; height:100%; margin:0; padding:0; }
@@ -17,7 +18,17 @@
 <table border="0">
   <tbody>
         <tr>
-            <td><video src="http://www.uniqueradio.jp/agplayerf/hls/HLS_Layer1.m3u8" autoplay loop muted></td>
+            <td>
+              <video id="video_smaple" autoplay loop muted></video>
+              <script>
+                if(Hls.isSupported()) {
+	                var video = document.getElementById('video_smaple');
+	                var hls = new Hls();
+	                hls.loadSource('http://www.uniqueradio.jp/agplayerf/hls/HLS_Layer1.m3u8');
+	                hls.attachMedia(video);
+                }
+              </script>
+            </td>
             <td width="200">twitter</td>
         </tr>
   </tbody>
