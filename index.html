@@ -34,6 +34,16 @@
 			hls.loadSource('https://agcdnsp.cdnext.stream.ne.jp/hls1/ae/data/prog_index.m3u8');
 			hls.attachMedia(video);
 		}
+		// Get all video elements on the page
+		var videos = document.getElementsByTagName('video');
+
+		// Loop through each video and add a listener to the play event
+		for (var i = 0; i < videos.length; i++) {
+		  videos[i].addEventListener('play', function() {
+		    this.muted = false;
+		  });
+		}
+
 		</script>
 		<!--
 		<video id="autoplay" style="width:100%; height:100%;" src="https://agcdnsp.cdnext.stream.ne.jp/hls1/ae/data/prog_index.m3u8" autoplay muted controls>
